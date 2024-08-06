@@ -20,23 +20,23 @@ let computerScore = 0;
 // Function to play a round
 function playARound(){
     for (i=1; i<6; i++){
-        console.log('round '+ i);
+        console.log('~~~ Round '+ i + ' ~~~');
 
         let computerSelect = computerChoice();
         let humanSelect = humanChoice();
 
-        console.log('computer chose: ' + computerSelect);
-        console.log('human chose: ' + humanSelect);
+        console.log('Computer chose 🤖: ' + computerSelect);
+        console.log('Human chose 🤡: ' + humanSelect);
 
         if (humanSelect === computerSelect){
             console.log('Tie')
         }
         else if ((humanSelect=== 'paper' && computerSelect === 'rock') || (humanSelect === 'rock' && computerSelect ==='scissors') || (humanSelect === 'scissors' && computerSelect === 'paper')){
-            console.log('Human-wins! round ' + i)
+            console.log('Human-wins Round ' + i)
             humanScore = humanScore + 1;
         }
         else{
-            console.log('Computer-wins! round ' + i)
+            console.log('Computer-wins Round ' + i)
             computerScore = computerScore + 1;
         }
     }
@@ -45,11 +45,11 @@ function playARound(){
 let play = playARound()
 
 // Winner
+console.log('~~~⭐️ Winner Winner Chicken Dinner ⭐️~~~')
+
 console.log('Total computer score: ' + computerScore);
 console.log('Total human score: '+ humanScore)
-if (humanScore === computerScore){
-    console.log("It's a Tie");
-}
+
 if (humanScore === computerScore){
     console.log("It's a Tie");
 }
