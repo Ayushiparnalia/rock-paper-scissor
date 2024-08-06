@@ -20,12 +20,36 @@ function humanChoice(){
  console.log('computer chose: ' + computerSelect);
  console.log('human chose: ' + humanSelect);
 
-if (humanSelect === computerSelect){
-    console.log('Tie')
+ //function to play rounds
+ let humanScore = 0;
+ let computerScore = 0;
+ function playGame(){
+    if (humanSelect === computerSelect){
+        console.log('Tie')
+    }
+    else if ((humanSelect=== 'paper' && computerSelect === 'rock') || (humanSelect === 'rock' && computerSelect ==='scissors') || (humanSelect === 'scissors' && computerSelect === 'paper')){
+        console.log('Human-wins!')
+        humanScore =+ 1;
+        console.log(humanScore)
+    }
+    else{
+        console.log('Computer-wins!')
+        computerScore =+ 1;
+        console.log(computerScore);
+    }
+ }
+ function playRounds(){
+    for (i=1; i<6; i++){
+        console.log('round: ' + i);
+        humanChoice();
+        computerChoice();
+        playGame();
+        if (humanScore > computerScore){
+            console.log('round ' + i + 'winner is human');
+        }
+        else{
+            console.log('round ' + i + 'winner is computer');
+        }
+    }
 }
-else if ((humanSelect=== 'paper' && computerSelect === 'rock') || (humanSelect === 'rock' && computerSelect ==='scissors') || (humanSelect === 'scissors' && computerSelect === 'paper')){
-    console.log('Human-wins!')
-}
-else{
-    console.log('Computer-wins!')
-}
+playRounds()
