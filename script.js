@@ -5,3 +5,8 @@ function computerChoice() {
     return computerSelect;
 }
 console.log(computerChoice())
+
+function humanChoice(){
+    let humanSelect = prompt('Rock/Paper/Scissors');
+}
+humanChoice()
