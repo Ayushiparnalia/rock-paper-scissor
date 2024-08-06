@@ -1,0 +1,23 @@
+// 5 rounds of game
+for (i = 1; i < 6; i++){
+    console.log('round '+ i);
+    let play = playARound()
+}
+
+let computerSelect = computerChoice();
+let humanSelect = humanChoice();
+
+console.log('computer chose: ' + computerSelect);
+console.log('human chose: ' + humanSelect);
+
+if (humanSelect === computerSelect){
+    console.log('Tie')
+}
+else if ((humanSelect=== 'paper' && computerSelect === 'rock') || (humanSelect === 'rock' && computerSelect ==='scissors') || (humanSelect === 'scissors' && computerSelect === 'paper')){
+    console.log('Human-wins!')
+    humanScore = humanScore + 1;
+}
+else{
+    console.log('Computer-wins!')
+    computerScore = computerScore + 1;
+}
